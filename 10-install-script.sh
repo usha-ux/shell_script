@@ -1,7 +1,6 @@
     #!/bin/bash
 
-    dnf install mysql -y
-    dnf install git -y
+    
     USERID=$(id -u)
 
     if [ $USERID -ne 0]
@@ -15,7 +14,7 @@
     if [ $? -ne 0 ]
     then 
         dnf install mysql -y
-        if[ $? -ne 0 ]
+        if [ $? -ne 0 ]
     then 
             echo "installing mysql ...FAILURE"
             exit 1
