@@ -2,12 +2,16 @@
 
 USERID=$(id -u)
 
+echo "the user id is::$USERID"
+
 if [ $USERID -ne 0 ]
 
 then
-echo "you do not have access you must have sudo access"
+
+echo "you do not have acces take sudo access"
 
 exit 1
+
 fi
 
 dnf list installed mysql
@@ -15,19 +19,19 @@ dnf list installed mysql
 if [ $? -ne 0 ]
 then
 
-dnf install mysql -y
-  if [$? -ne 0 ]
+dnf install mysqll -y
 
-  then  
-
-    echo "mysql installation failure.."
+    if [ $? -ne 0 ]
+    then
+    echo " my sql installlationn failuree.."
     exit 1
-    else 
-    echo "mysql installations success.."
+
+    else
+
+    echo "mysql success"
     fi
+
 else
 
-echo "mysql already installed in your system.."
-
+echo " you have already installed mysql"
 fi
-
