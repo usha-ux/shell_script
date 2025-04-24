@@ -10,7 +10,7 @@ echo "you do not have access you must have sudo access"
 exit 1
 fi
 
-dnf list insatlled mysql
+dnf list installed mysql
 
 if [ $? -ne 0 ]
 then
